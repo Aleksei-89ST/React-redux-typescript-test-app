@@ -1,5 +1,6 @@
 import React, { Dispatch, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { useActions } from "../hooks/useActions";
 import { useTypesSelector } from "../hooks/useTypedSelector";
 import { fetchUsers } from "../store/action-creators/user";
 import { UserAction } from "../types/todo";
@@ -7,9 +8,9 @@ import { UserAction } from "../types/todo";
 //данные из состояния мы вынимаем при помощи хука useSelector
 const UserList: React.FC = () => {
   const { users, error, loading } = useTypesSelector((state) => state.user);
-  const dispatch:Dispatch<any> = useDispatch();
+ const {fetchUsers} = useActions()
   useEffect(() => {
-    dispatch(fetchUsers());
+    fetchUsers();
   }, []);
 
   if (loading) {
