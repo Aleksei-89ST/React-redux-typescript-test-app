@@ -1,6 +1,6 @@
 // тут будет происходить взаимодействие со списком пользователей нашего приложение
 
-import { UserAction, UserActionTypes, UserState } from "../../types/todo"
+import { UserAction, UserActionTypes, UserState } from "../../types/user"
 
 
 
