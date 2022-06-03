@@ -20,10 +20,6 @@ export const fetchTodos = (page = 1, limit = 10) => {
           payload: response.data,
         });
       }, 1000);
-      dispatch({
-        type: UserActionTypes.FETCH_USERS_SUCCESS,
-        payload: response.data,
-      });
     } catch (e) {
       dispatch({
         type: TodoActionTypes.FETCH_TODOS_ERROR,
